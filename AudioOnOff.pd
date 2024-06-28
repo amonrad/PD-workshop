@@ -1,0 +1,11 @@
+#N canvas 150 175 788 344 12;
+#X obj 107 119 tgl 25 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 107 164 \; pd dsp \$1;
+#X obj 107 75 inlet;
+#X text 83 19 Inlet:;
+#X text 83 37 1 toggle Audio processing On or Off (accepts zero or
+non-zero number value);
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X coords 0 -1 1 1 80 50 1 100 100;

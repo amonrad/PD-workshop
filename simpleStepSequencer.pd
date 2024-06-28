@@ -1,0 +1,130 @@
+#N canvas 144 33 1121 605 12;
+#X obj 414 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 464 383 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 514 383 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 565 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 615 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 665 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 716 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 766 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 414 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 464 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 514 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 565 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 615 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 665 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 716 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 766 428 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 375 479 spigot;
+#X obj 425 479 spigot;
+#X obj 475 479 spigot;
+#X obj 526 479 spigot;
+#X obj 576 479 spigot;
+#X obj 626 479 spigot;
+#X obj 677 478 spigot;
+#X obj 727 478 spigot;
+#X obj 414 226 int;
+#X obj 414 202 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 465 226 + 1;
+#X obj 414 253 % 8;
+#X msg 465 180 0;
+#X obj 465 136 loadbang;
+#X obj 533 136 sel 0;
+#X text 124 161 Counter:;
+#X text 124 188 Counts from 0-7.;
+#X text 124 205 Bang message from the;
+#X text 117 221 metro object triggers;
+#X text 123 238 next number in the sequence;
+#X obj 414 58 bpm;
+#X text 123 254 after 7 \, the sequence starts over from 0:;
+#X text 67 327 Number count is sent to individual bang messages:;
+#X text 32 428 Toggle steps that should be output from the sequencer:
+;
+#X text 298 58 Start sequencer:;
+#X obj 414 277 + 1;
+#X obj 414 327 select 1 2 3 4 5 6 7 8, f 58;
+#X obj 792 409 unpack f f f f f f f f;
+#X obj 792 32 inlet preset;
+#X obj 405 16 inlet toggleOnOff;
+#X obj 540 16 inlet bpm;
+#X obj 425 555 outlet;
+#X text 848 176 Inlets:;
+#X text 848 194 1 toggle on/off;
+#X text 848 211 2 number \, bpm;
+#X text 848 229 3 list of 8 numbers \, preset;
+#X text 847 259 Outlets:;
+#X text 847 275 1 midi-output (note/velocity pairs);
+#X msg 425 516 60 127;
+#X connect 0 0 16 0;
+#X connect 1 0 17 0;
+#X connect 2 0 18 0;
+#X connect 3 0 19 0;
+#X connect 4 0 20 0;
+#X connect 5 0 21 0;
+#X connect 6 0 22 0;
+#X connect 7 0 23 0;
+#X connect 8 0 16 1;
+#X connect 9 0 17 1;
+#X connect 10 0 18 1;
+#X connect 11 0 19 1;
+#X connect 12 0 20 1;
+#X connect 13 0 21 1;
+#X connect 14 0 22 1;
+#X connect 15 0 23 1;
+#X connect 16 0 54 0;
+#X connect 17 0 54 0;
+#X connect 18 0 54 0;
+#X connect 19 0 54 0;
+#X connect 20 0 54 0;
+#X connect 21 0 54 0;
+#X connect 22 0 54 0;
+#X connect 23 0 54 0;
+#X connect 24 0 26 0;
+#X connect 24 0 27 0;
+#X connect 25 0 24 0;
+#X connect 26 0 24 1;
+#X connect 27 0 41 0;
+#X connect 28 0 24 1;
+#X connect 29 0 28 0;
+#X connect 30 0 28 0;
+#X connect 36 0 25 0;
+#X connect 36 1 30 0;
+#X connect 41 0 42 0;
+#X connect 42 0 0 0;
+#X connect 42 1 1 0;
+#X connect 42 2 2 0;
+#X connect 42 3 3 0;
+#X connect 42 4 4 0;
+#X connect 42 5 5 0;
+#X connect 42 6 6 0;
+#X connect 42 7 7 0;
+#X connect 43 0 8 0;
+#X connect 43 1 9 0;
+#X connect 43 2 10 0;
+#X connect 43 3 11 0;
+#X connect 43 4 12 0;
+#X connect 43 5 13 0;
+#X connect 43 6 14 0;
+#X connect 43 7 15 0;
+#X connect 44 0 43 0;
+#X connect 45 0 36 1;
+#X connect 46 0 36 0;
+#X connect 54 0 47 0;
+#X coords 0 605 1 604 160 100 0;
